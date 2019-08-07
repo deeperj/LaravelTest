@@ -53,7 +53,7 @@ class RomanNumeralsServiceController extends Controller
      */
     public function popularConversions($the_integer=10)
     {
-        if(is_int($the_integer)){
+        if(is_int((int)$the_integer)){
             return response()->json($this->svc->popularConversions($the_integer));
         }else{
             return response()->json($this->svc->popularConversions());
@@ -67,7 +67,7 @@ class RomanNumeralsServiceController extends Controller
      */
     public function recentConversions($the_integer=10)
     {
-        if(is_int($the_integer)){
+        if(is_int((int)$the_integer)){
             return response()->json($this->svc->recentConversions($the_integer));
         }else{
             return response()->json($this->svc->recentConversions());
