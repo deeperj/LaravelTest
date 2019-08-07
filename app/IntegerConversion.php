@@ -7,7 +7,6 @@ use App\Transformers\RomanNumeralsServiceTransformer;
 class IntegerConversion implements IntegerConversionInterface
 {
     function popularConversions($int=10){
-        echo($int);
         $c=RomanNumeralsService::all()->take($int)->sortByDesc('conversionCount');
         return fractal($c, new RomanNumeralsServiceTransformer())->toArray();
     }

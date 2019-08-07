@@ -35,9 +35,9 @@ return [
 
         'sqlite' => [
             'driver' => 'sqlite',
-            'database' => getcwd().'\\'.env('DB_DATABASE'),
-            // 'database' => env('DB_DATABASE'),
-            // 'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            // 'database' => getcwd().'\\'.env('DB_DATABASE'),
+            'database' => env('DB_DATABASE'),
+            // 'database' => env('DB_DATABASE', database_path('public/roman-numerals-api.db')),
             'prefix' => '',
         ],
 

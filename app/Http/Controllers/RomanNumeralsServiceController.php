@@ -27,14 +27,14 @@ class RomanNumeralsServiceController extends Controller
      */
     public function integerToRoman($the_integer)
     {
-        if(!is_int($the_integer)){
+        if(!is_int((int)$the_integer)){
           return response('Non-integer request', 400)
                   ->header('Content-Type', 'text/plain');
         }
-        $x=RomanNumeralsService::where('theNumber',$the_integer);
+        $x=RomanNumeralsService::where('theNumber',$the_integer)->first();
         if($x){
             $x->conversionCount++;
-            $x->save(); 
+            $x->save();
             $cvt = fractal($x, new RomanNumeralsServiceTransformer())->toArray();
         }else{
             $cvt = fractal(RomanNumeralsService::create([

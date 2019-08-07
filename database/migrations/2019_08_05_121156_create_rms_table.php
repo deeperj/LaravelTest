@@ -15,8 +15,8 @@ class CreateRmsTable extends Migration
     {
         Schema::create('roman_numerals_services', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('theNumber');//roman-numeral-conversion
-            $table->integer('conversionCount')->default(0);//roman-numeral-conversion
+            $table->integer('theNumber')->unique();//roman-numeral-conversion
+            $table->integer('conversionCount');//roman-numeral-conversion
             $table->string('romanNumeralConversion');//roman-numeral-conversion
             $table->timestamps();
         });
